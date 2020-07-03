@@ -1,0 +1,3 @@
+<div class="basic-container">
+    <app-submenu *ngFor="let accesomenu of accesoPerfil['Menu']" [x]="accesomenu.idMenu" [y]="accesomenu.menuNombre" (clickedItem)="hostClickHandler($event)"></app-submenu>
+</div>

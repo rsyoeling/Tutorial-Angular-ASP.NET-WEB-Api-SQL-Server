@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDWebApiModelStoreContainer" CdmEntityContainer="BDWebApiEntities">
+    <EntitySetMapping Name="Acceso">
+      <EntityTypeMapping TypeName="BDWebApiModel.Acceso">
+        <MappingFragment StoreEntitySet="Acceso">
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="idSubmenu" ColumnName="idSubmenu" />
+          <ScalarProperty Name="idMenu" ColumnName="idMenu" />
+          <ScalarProperty Name="acceso1" ColumnName="acceso" />
+          <ScalarProperty Name="usuarioCreacion" ColumnName="usuarioCreacion" />
+          <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menu">
+      <EntityTypeMapping TypeName="BDWebApiModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="idMenu" ColumnName="idMenu" />
+          <ScalarProperty Name="menuNombre" ColumnName="menuNombre" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="usuarioCreacion" ColumnName="usuarioCreacion" />
+          <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="orderBy" ColumnName="orderBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="BDWebApiModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="rolNombre" ColumnName="rolNombre" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="usuarioCreacion" ColumnName="usuarioCreacion" />
+          <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Submenu">
+      <EntityTypeMapping TypeName="BDWebApiModel.Submenu">
+        <MappingFragment StoreEntitySet="Submenu">
+          <ScalarProperty Name="idSubmenu" ColumnName="idSubmenu" />
+          <ScalarProperty Name="idMenu" ColumnName="idMenu" />
+          <ScalarProperty Name="submenuNombre" ColumnName="submenuNombre" />
+          <ScalarProperty Name="urlPagina" ColumnName="urlPagina" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="usuarioCreacion" ColumnName="usuarioCreacion" />
+          <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="orderBy" ColumnName="orderBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BDWebApiModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="BDWebApiModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
+          <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
+          <ScalarProperty Name="usuario1" ColumnName="usuario" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="telefonoOficina" ColumnName="telefonoOficina" />
+          <ScalarProperty Name="AccesoPrimeraVez" ColumnName="AccesoPrimeraVez" />
+          <ScalarProperty Name="ultimasContrasenas" ColumnName="ultimasContrasenas" />
+          <ScalarProperty Name="contrasenaEncriptada" ColumnName="contrasenaEncriptada" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="usuarioCreacion" ColumnName="usuarioCreacion" />
+          <ScalarProperty Name="usuarioModificacion" ColumnName="usuarioModificacion" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

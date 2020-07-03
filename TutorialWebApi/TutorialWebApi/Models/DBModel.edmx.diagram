@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ee70fee0f5d64f0395bdf9a232a3ef64" Name="Diagram1">
+        <EntityTypeShape EntityType="BDWebApiModel.Acceso" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDWebApiModel.Menu" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDWebApiModel.Rol" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDWebApiModel.Submenu" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDWebApiModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDWebApiModel.Usuario" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="BDWebApiModel.FK__Acceso__idRol__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="BDWebApiModel.FK__Acceso__idSubmen__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="BDWebApiModel.FK__Submenu__idMenu__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="BDWebApiModel.FK__Usuario__idRol__173876EA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

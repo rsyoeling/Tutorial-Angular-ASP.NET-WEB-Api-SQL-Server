@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDWebApiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Acceso">
+    <Key>
+      <PropertyRef Name="idRol" />
+      <PropertyRef Name="idSubmenu" />
+    </Key>
+    <Property Name="idRol" Type="Int32" Nullable="false" />
+    <Property Name="idSubmenu" Type="Int32" Nullable="false" />
+    <Property Name="idMenu" Type="Int32" Nullable="false" />
+    <Property Name="acceso1" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="usuarioCreacion" Type="Int32" />
+    <Property Name="usuarioModificacion" Type="Int32" />
+    <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Rol" Relationship="Self.FK__Acceso__idRol__1A14E395" FromRole="Acceso" ToRole="Rol" />
+    <NavigationProperty Name="Submenu" Relationship="Self.FK__Acceso__idSubmen__1B0907CE" FromRole="Acceso" ToRole="Submenu" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="idMenu" />
+    </Key>
+    <Property Name="idMenu" Type="Int32" Nullable="false" />
+    <Property Name="menuNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="usuarioCreacion" Type="Int32" />
+    <Property Name="usuarioModificacion" Type="Int32" />
+    <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="orderBy" Type="Int32" />
+    <NavigationProperty Name="Submenu" Relationship="Self.FK__Submenu__idMenu__1273C1CD" FromRole="Menu" ToRole="Submenu" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="idRol" />
+    </Key>
+    <Property Name="idRol" Type="Int32" Nullable="false" />
+    <Property Name="rolNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="usuarioCreacion" Type="Int32" />
+    <Property Name="usuarioModificacion" Type="Int32" />
+    <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Acceso" Relationship="Self.FK__Acceso__idRol__1A14E395" FromRole="Rol" ToRole="Acceso" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__idRol__173876EA" FromRole="Rol" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Submenu">
+    <Key>
+      <PropertyRef Name="idSubmenu" />
+    </Key>
+    <Property Name="idSubmenu" Type="Int32" Nullable="false" />
+    <Property Name="idMenu" Type="Int32" />
+    <Property Name="submenuNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="urlPagina" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="usuarioCreacion" Type="Int32" />
+    <Property Name="usuarioModificacion" Type="Int32" />
+    <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="orderBy" Type="Int32" />
+    <NavigationProperty Name="Acceso" Relationship="Self.FK__Acceso__idSubmen__1B0907CE" FromRole="Submenu" ToRole="Acceso" />
+    <NavigationProperty Name="Menu" Relationship="Self.FK__Submenu__idMenu__1273C1CD" FromRole="Submenu" ToRole="Menu" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="usuario1" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="idRol" Type="Int32" Nullable="false" />
+    <Property Name="nombres" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="apellidoPaterno" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="apellidoMaterno" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="usuario1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="clave" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="correoElectronico" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telefonoOficina" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="AccesoPrimeraVez" Type="Boolean" />
+    <Property Name="ultimasContrasenas" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="contrasenaEncriptada" Type="Boolean" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="usuarioCreacion" Type="Int32" />
+    <Property Name="usuarioModificacion" Type="Int32" />
+    <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Rol" Relationship="Self.FK__Usuario__idRol__173876EA" FromRole="Usuario" ToRole="Rol" />
+  </EntityType>
+  <Association Name="FK__Acceso__idRol__1A14E395">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="Acceso" Type="Self.Acceso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="idRol" />
+      </Principal>
+      <Dependent Role="Acceso">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Acceso__idSubmen__1B0907CE">
+    <End Role="Submenu" Type="Self.Submenu" Multiplicity="1" />
+    <End Role="Acceso" Type="Self.Acceso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Submenu">
+        <PropertyRef Name="idSubmenu" />
+      </Principal>
+      <Dependent Role="Acceso">
+        <PropertyRef Name="idSubmenu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Submenu__idMenu__1273C1CD">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="0..1" />
+    <End Role="Submenu" Type="Self.Submenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="idMenu" />
+      </Principal>
+      <Dependent Role="Submenu">
+        <PropertyRef Name="idMenu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuario__idRol__173876EA">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="idRol" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDWebApiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Acceso" EntityType="Self.Acceso" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" />
+    <EntitySet Name="Submenu" EntityType="Self.Submenu" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK__Acceso__idRol__1A14E395" Association="Self.FK__Acceso__idRol__1A14E395">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Acceso" EntitySet="Acceso" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Acceso__idSubmen__1B0907CE" Association="Self.FK__Acceso__idSubmen__1B0907CE">
+      <End Role="Submenu" EntitySet="Submenu" />
+      <End Role="Acceso" EntitySet="Acceso" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Submenu__idMenu__1273C1CD" Association="Self.FK__Submenu__idMenu__1273C1CD">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="Submenu" EntitySet="Submenu" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuario__idRol__173876EA" Association="Self.FK__Usuario__idRol__173876EA">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

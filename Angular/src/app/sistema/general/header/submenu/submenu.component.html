@@ -1,0 +1,6 @@
+<button mat-button [matMenuTriggerFor]="menu">{{y}}</button>
+  <mat-menu #menu="matMenu">
+    <div *ngFor="let accesosubmenu of accesoPerfil['Submenu']">
+        <button *ngIf="(accesosubmenu.idMenu == x)" mat-menu-item (click)="clickHandler('Item 1 of Menu ' + x)">{{accesosubmenu.submenuNombre}}</button>
+    </div>
+</mat-menu>
