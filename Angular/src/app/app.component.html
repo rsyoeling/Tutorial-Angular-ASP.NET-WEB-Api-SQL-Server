@@ -1,2 +1,20 @@
-<app-menu></app-menu>
-<router-outlet></router-outlet>
+<!--<app-menu></app-menu>
+<router-outlet></router-outlet>-->
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-primary" *ngIf="currentUser">
+    <div class="container d-flex justify-content-between">
+        <!--class="navbar-nav"-->
+        <app-menu></app-menu>
+        <a style="color:white; font-size : 15px;" class="nav-item nav-link float-right" (click)="logout()">Salir</a>
+    </div>
+</nav>
+<!-- main content container -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 offset-sm-2">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
